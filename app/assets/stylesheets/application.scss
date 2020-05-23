@@ -2,5 +2,5 @@
 @import "mixins";
 @import "portal/variables";
 @import "portal/themes";
-@import "portal/authentication";
+@import "portal/modules/*";
 @import "portal/users/*";
