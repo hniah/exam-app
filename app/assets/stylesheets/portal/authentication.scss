@@ -1,0 +1,42 @@
+section.authentication{
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  .wrapper{
+    max-width: 380px;
+    width: 100%;
+  }
+  .bound-sign-in{
+    border: 1px solid $border-color;
+    @include border-radius(3px);
+    h2{
+      font-size: 24px;
+      text-align: center;
+      border-bottom: 1px solid $border-color;
+      padding: 15px;
+    }
+    .form-signin{
+      .field{
+        @include flex-box;
+        padding: 10px 15px;
+        align-items: center;
+        label{
+          width: 100px;
+          margin: 0; 
+          align-items: center;
+        }
+        .input{
+          flex-grow: 1;
+        }
+      }
+      .chk-remember-me{
+        margin-left: 115px;
+      }
+      .actions{
+        border-top: 1px solid $border-color;
+        padding: 15px;
+        text-align: right;
+      }
+    }
+  }
+}

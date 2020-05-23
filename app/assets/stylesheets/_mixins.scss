@@ -1,0 +1,18 @@
+@mixin flex-box {
+  display: -webkit-flex;
+  display: -ms-flex;
+  display: -o-flex;
+  display: flex;
+}
+
+@mixin border-radius($px) {
+  border-radius:         $px;
+  -moz-border-radius:    $px;
+  -webkit-border-radius: $px;
+}
+
+@mixin box-shadow($values) {
+  box-shadow:         $values;
+  -moz-shadow:        $values;
+  -webkit-box-shadow: $values;
+}

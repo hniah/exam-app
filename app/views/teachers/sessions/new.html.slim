@@ -1,17 +1,22 @@
-h2
-  | Log in
-= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
-  .field
-    = f.label :email
-    br
-    = f.email_field :email, autofocus: true, autocomplete: "email"
-  .field
-    = f.label :password
-    br
-    = f.password_field :password, autocomplete: "current-password"
-  - if devise_mapping.rememberable?
-    .field
-      = f.check_box :remember_me
-      = f.label :remember_me
-  .actions
-    = f.submit "Log in"
+section.authentication.flex-ctn
+  .wrapper
+    = flash_messages
+    .bound-sign-in
+      h2 Administrator login
+      = form_for(resource, as: resource_name, url: session_path(resource_name), html: {class: 'form-signin'}) do |f|
+        .field
+          = f.label :email
+          .input
+            = f.email_field :email, autofocus: true, autocomplete: "email", class: 'form-control'
+        .field
+          = f.label :password
+          .input
+            = f.password_field :password, autocomplete: "current-password", class: 'form-control'
+        - if devise_mapping.rememberable?
+          .chk-remember-me
+            label
+              = f.check_box :remember_me
+              | Remember me
+              
+        .actions
+          = f.submit "Login", class: 'btn btn-primary btn-sm'

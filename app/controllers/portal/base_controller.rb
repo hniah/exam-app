@@ -1,5 +1,6 @@
 module Portal
   class BaseController < ApplicationController
+    layout 'portal'
     before_action :authenticate_admin!
     
 

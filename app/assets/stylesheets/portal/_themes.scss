@@ -1,3 +1,11 @@
+@import "https://fonts.googleapis.com/css?family=Rubik:300,400,500,700";
+
 body{
-  background: #ccc;
+  background: $default-bg-color;
+  font-family: $default-font;
+  font-size: $default-font-size;
+  color: $default-text-color;
+}
+.flex-ctn{
+  @include flex-box;
 }
