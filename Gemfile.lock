@@ -181,6 +181,9 @@ GEM
       tilt
     seedbank (0.5.0)
       rake (>= 10.0)
+    simple_form (5.0.2)
+      actionpack (>= 5.0)
+      activemodel (>= 5.0)
     slim (4.1.0)
       temple (>= 0.7.6, < 0.9)
       tilt (>= 2.0.6, < 2.1)
@@ -240,6 +243,7 @@ DEPENDENCIES
   rails (~> 6.0.3, >= 6.0.3.1)
   sass-rails (>= 6)
   seedbank
+  simple_form
   slim
   spring
   spring-watcher-listen (~> 2.0.0)

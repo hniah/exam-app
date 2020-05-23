@@ -31,6 +31,7 @@ gem 'kaminari'
 
 # UI
 gem 'active_link_to'
+gem 'simple_form'
 
 
 group :development, :test do
