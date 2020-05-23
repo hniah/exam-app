@@ -1,0 +1,8 @@
+.row.mt-3
+  .col-md-6
+    = simple_form_for user, as: :user, url: [:portal, user.becomes(User)], wrapper: :horizontal_form, wrapper_mappings: { boolean: :horizontal_boolean } do |f|
+      = f.input :name
+      = f.input :email, input_html: { autocomplete: 'email' }
+      = f.input :password
+      = f.input :password_confirmation
+      = f.input :type, collection: role_collection, prompt: 'Select role', label: 'Role'

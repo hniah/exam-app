@@ -1,5 +1,7 @@
 nav.navbar.navbar-expand-lg.navbar-light.bg-light.mb-3
   = link_to 'Exam Application', portal_root_path, class: 'navbar-brand'
+  span
+    = "Hi #{current_admin.name}!"
   ul.navbar-nav.ml-auto
     = active_link_to 'Users', portal_users_path, class: 'nav-link', wrap_tag: :li, wrap_class: 'nav-item'
     = active_link_to 'Tests', '/tests', class: 'nav-link', wrap_tag: :li, wrap_class: 'nav-item'

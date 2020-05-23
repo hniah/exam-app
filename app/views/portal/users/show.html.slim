@@ -1,0 +1,17 @@
+= link_to 'Back', :back, class: 'btn btn-warning mr-3'
+= link_to 'Edit', edit_portal_user_path(@user), class: 'btn btn-info mr-3'
+= link_to 'Delete', portal_user_path(@user), method: :delete, data: {confirm: "Are you sure?"}, class: 'btn btn-danger'
+
+.row.mt-3
+  .col-md-4
+    table.table
+      tr
+        th Name
+        td = @user.name
+      tr
+        th Email
+        td = @user.email
+      tr
+        th Role
+        td = @user.type
+  

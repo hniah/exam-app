@@ -1,5 +1,14 @@
 class User < ApplicationRecord
   extend Enumerize
 
-  enumerize :type, in: ['Teacher', 'Student'], scope: true
+  devise :database_authenticatable, :registerable,
+         :recoverable, :rememberable, :validatable
+
+
+  ROLE = ['Teacher', 'Student'].freeze
+
+  enumerize :type, in: ROLE, scope: true
+
+  validates :name, presence: true
+  validates :type, presence: true
 end

@@ -1,0 +1,4 @@
+= link_to 'Back', portal_users_path, class: 'btn btn-warning mr-3'
+= link_to 'Create', 'javascript:;', class: 'btn btn-primary', onClick: "$('form#new_user').submit()"
+
+= render 'portal/users/form', user: @user
