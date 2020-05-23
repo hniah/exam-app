@@ -3,5 +3,6 @@ html
   head
     = render 'layouts/shared/head'
   body
-    .container-fluid
-      = yield
+    #page-wrapper class=(page_wrapper)
+      .container-fluid
+        = yield

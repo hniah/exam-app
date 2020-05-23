@@ -3,7 +3,8 @@ html
   head
     = render 'layouts/shared/head'
   body
-    .container-fluid
-      = render 'portal/shared/layout/header'
-      = flash_messages
-      = yield
+    #page-wrapper class=(page_wrapper)
+      .container-fluid
+        = render 'portal/shared/layout/header'
+        = flash_messages
+        = yield
