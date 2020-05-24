@@ -33,6 +33,7 @@ gem 'kaminari'
 gem 'active_link_to'
 gem 'simple_form'
 gem 'slim'
+gem 'nested_form'
 
 
 group :development, :test do

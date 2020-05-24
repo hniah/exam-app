@@ -3,18 +3,19 @@ module Portal
     before_action :find_test, only: [:edit, :destroy, :show, :update]
     
     def index
-      @tests = Test.all.order(id: :desc).page(params[:page]).per(10)
+      @tests = Test.all.order(id: :desc).includes(:questions).page(params[:page]).per(10)
     end
 
     def new
       @test = Test.new
+      @test.questions.build.options.build
+      # @test.options.build
     end
 
     def create
       @test = Test.new(test_params)
-  
       if @test.save
-        redirect_to portal_tests_path, notice: 'Test has been created.'
+        redirect_to edit_portal_test_path(@test), notice: 'Test has been created.'
       else
         render :new
       end
@@ -50,10 +51,11 @@ module Portal
     end
 
     def test_params
-      params.require(:test).permit(
-        :name,
-        :description
-      )
+    
+      params.require(:test).permit(:name, :description,
+        questions_attributes: [:id, :label, :description, :_destroy,
+                                options_attributes: [:id, :correct, :answer, :_destroy]
+                              ]) 
     end
   end
 end

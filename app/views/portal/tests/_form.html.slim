@@ -1,5 +1,20 @@
-.row.mt-3
+.row.mt-5
   .col-md-6
-    = simple_form_for [:portal, test], as: :test , wrapper: :horizontal_form, wrapper_mappings: { boolean: :horizontal_boolean } do |f|
-      = f.input :name
-      = f.input :description
+    = simple_nested_form_for [:portal, test], as: :test  do |f|
+      = f.input :name, placeholder: 'Give the Test a name here...', label: false
+      = f.input :description, placeholder: 'Enter the description here...', label: false
+      = f.simple_fields_for :questions do |f_q|
+        .question.border-top.mb-4.pt-4
+          .d-flex
+            = f_q.input :label, placeholder: 'Give the Question a label here...', label: false, wrapper_html: { class: 'flex-grow-1' }
+            = f_q.link_to_remove "Remove", class: 'btn btn-danger align-self-start ml-3'
+          = f_q.input :description, placeholder: 'Enter the description here...', label: false
+          .options.pl-3
+            = f_q.simple_fields_for :options do |f_op|
+              .item.d-flex.align-items-center
+                = f_op.input :answer, label: false, placeholder: 'Enter the answer'
+                = f_op.input :correct, label: 'Correct Answer', input_html: { value: '1' }, wrapper_html: { class: 'ml-2' }
+                = f_op.link_to_remove "Remove", class: 'ml-2 form-group'
+            = f_q.link_to_add 'Add Opinion', :options, class: 'btn btn-info btn-sm'
+        
+      = f.link_to_add 'Add Question', :questions, class: 'btn btn-primary btn-sm'

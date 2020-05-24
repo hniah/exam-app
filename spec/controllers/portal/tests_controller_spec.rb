@@ -34,7 +34,7 @@ describe Portal::TestsController, type: :controller do
 
   describe '#create' do
     def do_request
-      post :create, params: { test: test.attributes}
+      post :create, params: { test: test.attributes }
     end
 
   
@@ -42,7 +42,7 @@ describe Portal::TestsController, type: :controller do
 
     it 'successfull' do
       expect { do_request }.to change { [Test.count] }.from([0]).to([1])
-      expect(response).to redirect_to portal_tests_url
+      expect(response).to redirect_to edit_portal_test_url(Test.first)
     end
   end
 
