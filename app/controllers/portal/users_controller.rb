@@ -11,6 +11,7 @@ module Portal
 
     def create
       @user = User.new(user_params)
+  
       if @user.save
         redirect_to portal_users_path, notice: 'User has been created.'
       else
@@ -19,8 +20,8 @@ module Portal
     end
 
     def update
-      if @user.update_attributes(update_user_params)
-        redirect_to portal_users_path, notice: 'User has been updated.'
+      if @user.update(update_user_params)
+        redirect_to portal_user_path(@user), notice: 'User has been updated.'
       else
         render :edit
       end
@@ -31,10 +32,12 @@ module Portal
     def show; end
 
     def destroy
-      if @user.destroy
-        flash[:notice] = 'You have just removed a user'
+      if @user == current_admin
+        flash[:alert] = 'Can not remove yourself.'
+      elsif @user.destroy
+        flash[:notice] = 'User has been deleted.'
       else
-        flash[:alert] = @user.errors.full_messages
+        flash[:error] = @user.errors.full_messages
       end
       redirect_to portal_users_path
     end
