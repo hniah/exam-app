@@ -18,13 +18,13 @@ gem 'turbolinks', '~> 5'
 
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.2', require: false
+
+# ENV
 gem 'figaro'
 
 gem 'devise'
 gem 'enumerize'
 gem 'seedbank'
-gem 'slim'
-gem 'faker'
 
 # Pagination
 gem 'kaminari'
@@ -32,6 +32,7 @@ gem 'kaminari'
 # UI
 gem 'active_link_to'
 gem 'simple_form'
+gem 'slim'
 
 
 group :development, :test do
@@ -40,9 +41,14 @@ group :development, :test do
   # show error better
   gem 'better_errors'
   gem 'binding_of_caller'
+  gem 'pry-rails'
 
-  gem 'shoulda-matchers'
+   # Use rspec for unit test
   gem 'rspec-rails'
+  gem 'rails-controller-testing'
+  gem 'shoulda-matchers'
+  gem 'faker'
+  gem 'factory_bot_rails'
 end
 
 group :development do
