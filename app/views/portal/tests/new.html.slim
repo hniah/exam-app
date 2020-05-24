@@ -1,0 +1,4 @@
+= link_to 'Back', portal_tests_path, class: 'btn btn-warning mr-3'
+= link_to 'Create', 'javascript:;', class: 'btn btn-primary', onClick: "$('form#new_test').submit()"
+
+= render 'portal/tests/form', test: @test

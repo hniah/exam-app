@@ -4,5 +4,5 @@ nav.navbar.navbar-expand-lg.navbar-light.bg-light.mb-3
     = "Hi #{current_admin.name}!"
   ul.navbar-nav.ml-auto
     = active_link_to 'Users', portal_users_path, class: 'nav-link', wrap_tag: :li, wrap_class: 'nav-item'
-    = active_link_to 'Tests', '/tests', class: 'nav-link', wrap_tag: :li, wrap_class: 'nav-item'
+    = active_link_to 'Tests', portal_tests_path, class: 'nav-link', wrap_tag: :li, wrap_class: 'nav-item'
     = link_to 'Logout', destroy_teacher_session_path, method: :delete, class: 'nav-link', wrap_tag: :li, wrap_class: 'nav-item'

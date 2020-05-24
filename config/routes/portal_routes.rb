@@ -5,4 +5,5 @@ root 'portal/users#index'
 namespace :portal, path: 'portal' do
   root 'users#index'
   resources :users
+  resources :tests
 end

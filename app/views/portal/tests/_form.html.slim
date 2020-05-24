@@ -1,0 +1,5 @@
+.row.mt-3
+  .col-md-6
+    = simple_form_for [:portal, test], as: :test , wrapper: :horizontal_form, wrapper_mappings: { boolean: :horizontal_boolean } do |f|
+      = f.input :name
+      = f.input :description
