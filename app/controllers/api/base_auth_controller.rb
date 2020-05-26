@@ -8,7 +8,7 @@ module Api
     def authenticate_request
       token = request.headers['Access-Token']
       raise Error::API::MissingToken if token.nil?
-      raise Error::API::TokenInvalid if validate_token(token).nil?
+      raise Error::API::InvalidToken if validate_token(token).nil?
     end
 
     def validate_token(token)

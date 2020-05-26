@@ -9,7 +9,7 @@ module Error
 
   class API
     MissingToken = APIError.new(1000, 'Missing Access-Token')
-    TokenInvalid = APIError.new(1001, 'Access-Token invalid')
+    InvalidToken = APIError.new(1001, 'Invalid Access-Token ')
     LoginFailure = APIError.new(1002, 'Login unsuccessful')
   end
 end
