@@ -25,7 +25,7 @@ gem 'figaro'
 gem 'devise'
 gem 'enumerize'
 gem 'seedbank'
-
+gem 'faker'
 # Pagination
 gem 'kaminari'
 
@@ -50,7 +50,6 @@ group :development, :test do
   gem 'rspec-rails'
   gem 'rails-controller-testing'
   gem 'shoulda-matchers'
-  gem 'faker'
   gem 'factory_bot_rails'
 end
 
