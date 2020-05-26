@@ -7,6 +7,6 @@ puts "==== End ===="
 
 puts "==== Create Student ===="
 Student.create([
-  { name: 'Student A', email: 'student_a@example.com', password: '12345678'}
+  { name: 'Student', email: 'student@example.com', password: '12345678'}
 ])
 puts "==== End ===="

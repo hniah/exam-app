@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 describe Api::V1::TestsController, type: :controller do
-  let!(:student) { create :student }
+  let!(:student) { create :student, :token }
 
   describe '#index' do
     let!(:tests) { create_list :test, 5 }
