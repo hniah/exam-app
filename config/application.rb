@@ -31,5 +31,6 @@ module ExamApp
 
     # Don't generate system test files.
     config.generators.system_tests = nil
+    config.autoload_paths << Rails.root.join('lib')
   end
 end

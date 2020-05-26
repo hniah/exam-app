@@ -8,7 +8,7 @@ module Api
         if @user && @user.valid_password?(params[:password])
           render_json(data: {token: generate_token})
         else
-          render_json(error_code: 1000, message: 'Login unsuccessful')
+          raise Error::API::LoginFailure
         end
       end
 
