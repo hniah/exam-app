@@ -88,7 +88,7 @@ describe Api::V1::TestsController, type: :controller do
     let!(:test) { create :test}
     
     def do_request
-      post :commit, params: { id: test.id, answers: [{question_id: 1, answer_id: 1}] }
+      post :commit, params: { id: test.id, answers: [{question_id: 1, option_id: 1}] }
     end
 
     context 'Missing token' do
