@@ -7,8 +7,9 @@
     - Step 3: Make a copy application.rb from application.yml.sample and update username and password your PostgreSQL
     - Step 4: Open Terminal -> Go to root directory of the project
     - Step 5: $ bundle install
-    - Step 6: $ rake db:create db:migrate db:seed
-    - Step 7: $ rails s
+    - Step 6: $ yarn install
+    - Step 7: $ rake db:create db:migrate db:seed
+    - Step 8: $ rails s
 
 * Portal:
   - Login:
