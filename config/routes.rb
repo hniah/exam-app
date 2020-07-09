@@ -5,6 +5,8 @@ class ActionDispatch::Routing::Mapper
 end
 
 Rails.application.routes.draw do
-  draw :portal_routes
-  draw :api_routes
+  root :to => 'home#index'
+  mount ShopifyApp::Engine, at: '/'
+  # draw :portal_routes
+  # draw :api_routes
 end

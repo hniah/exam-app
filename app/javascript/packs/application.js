@@ -10,4 +10,4 @@ require("channels")
 require("jquery_nested_form")
 
 import 'bootstrap'
-import 'jquery_nested_form'
+require("shopify_app")

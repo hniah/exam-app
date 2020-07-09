@@ -36,6 +36,7 @@ gem 'slim'
 gem 'nested_form'
 
 gem 'active_model_serializers'
+gem 'shopify_app'
 
 
 group :development, :test do
