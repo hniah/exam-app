@@ -3,7 +3,7 @@ ShopifyApp.configure do |config|
   config.api_key = ENV['SHOPIFY_API_KEY']
   config.secret = ENV['SHOPIFY_API_SECRET']
   config.old_secret = ""
-  config.scope = "read_products,write_products,write_orders,read_orders" # Consult this page for more scope options:
+  config.scope = "read_products,write_products,write_orders,read_orders,write_script_tags" # Consult this page for more scope options:
                                  # https://help.shopify.com/en/api/getting-started/authentication/oauth/scopes
   config.embedded_app = true
   config.after_authenticate_job = false
@@ -11,7 +11,12 @@ ShopifyApp.configure do |config|
   config.shop_session_repository = 'Shop'
 
   config.webhooks = [
-    {topic: 'products/update', address: 'https://6c2e9db48e11.ngrok.io/webhooks/products_update', fields: ['title', 'vendor']}
+    {topic: 'carts/update', address: "#{ENV['HOST']}/webhooks/carts_update", format: 'json'},
+    {topic: 'products/update', address: "#{ENV['HOST']}/webhooks/products_update", fields: ['title', 'vendor']}
+  ]
+
+  config.scripttags = [
+    {event:'onload', src: "#{ENV['HOST']}/fancy.js"}
   ]
 end
 
