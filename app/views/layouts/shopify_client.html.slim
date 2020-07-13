@@ -1,0 +1,8 @@
+doctype html
+html
+  head
+    = render 'layouts/shared/client_header'
+  body
+    #page-wrapper class=(page_wrapper)
+      .container-fluid
+        = yield
