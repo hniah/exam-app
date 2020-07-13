@@ -6,7 +6,13 @@ ul
 h2 Orders
 ul
   - @orders.each do |order|
-    li= link_to order.email, "https://#{@current_shopify_session.domain}/admin/orders/#{order.id}", target: "_top"
+    li
+      = link_to order.email, "https://#{@current_shopify_session.domain}/admin/orders/#{order.id}", target: "_top"
+      p 
+        - order.note_attributes.each do |note|
+          = "#{note.attributes[:name]}: #{note.attributes[:value]}"
+          br
+
 
 
 h2 Webhooks

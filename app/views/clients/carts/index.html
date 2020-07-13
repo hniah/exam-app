@@ -1,7 +1,12 @@
 <h1>Cart</h1>
 <div id="storepick_cart_portal_code">
-  <p class="cart-attribute__field">
-    <label for="postal_code">Enter your postal code to check if you are eligible for local delivery</label>
-    <input id="postal_code" placeholder="Your Postal Code" type="text" name="attributes[postal_code]" value="{{ cart.attributes["postal_code"] }}">
-  </p>
+  <form action='https://google.com'>
+    <p class="cart-attribute__field">
+      <label for="postal_code">Enter your postal code to check if you are eligible for local delivery</label>
+      <input id="postal_code" placeholder="Your Postal Code" type="text" name="attributes[postal_code]" value="{{ cart.attributes["postal_code"] }}">
+    </p>
+  </form>
+  <div class="block-delivery-time">
+   
+  </div>
 </div>
