@@ -37,6 +37,7 @@ gem 'nested_form'
 
 gem 'active_model_serializers'
 gem 'shopify_app'
+gem 'rack-cors', require: 'rack/cors'
 
 
 group :development, :test do

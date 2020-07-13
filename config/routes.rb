@@ -8,5 +8,5 @@ Rails.application.routes.draw do
   root :to => 'home#index'
   mount ShopifyApp::Engine, at: '/'
   # draw :portal_routes
-  # draw :api_routes
+  draw :api_routes
 end
