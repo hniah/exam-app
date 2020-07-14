@@ -119,7 +119,7 @@ StorePickup.CartRender = {
     var div = $('#storepick_cart_portal_code').find("div.".concat(klazz));
     var html = '';
     if (loading) html = 'Loading...';else {
-      html = "<div class=\"note\">You are eligible for a local delivery.</div>";
+      html = "<div class=\"info\">You are eligible for a local delivery.</div>";
       if (showSelect == false) html += this.deliveryChoose();
       html += this.selectDeliveryTime(showSelect);
     }

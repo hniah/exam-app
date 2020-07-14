@@ -1,11 +1,5 @@
 module Portal
   class BaseController < ApplicationController
-    layout 'portal'
-    before_action :authenticate_admin!
-    
-
-    def authenticate_admin!
-      redirect_to new_teacher_session_path and return unless current_admin.present?
-    end
+    layout 'shopify_portal'
   end
 end
